@@ -1,0 +1,9 @@
+label,
+textarea,
+input {
+  display: block;
+  width: 100%;
+}
+.alert-block li {
+  list-style: none;
+}
