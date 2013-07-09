@@ -3,6 +3,7 @@
 	include_once('resources/init.php'); 
 	
 	if ( isset($_POST['title'], $_POST['contents'], $_POST['category']) ) {
+			//var_dump($_POST);
 		$errors = array();
 
 		$title 		= trim($_POST['title']);
@@ -16,7 +17,7 @@
 		if ( empty($contents) ) {
 			$errors[] = 'You need to supply some text';
 		}
-		if ( ! category_exists('id', $POST['category']) ){
+		if ( ! category_exists('id', $_POST['category']) ){
 			$errors[] = 'That category does not exist';	
 		}
 
@@ -43,6 +44,7 @@
 		<div class="span6 offset3">
 			<h1>Add Post</h1>
 				<hr>
+				<?php include "includes/_nav.php" ?>
 				<?php
 				if ( isset($errors) && ! empty($errors) ) {
 					echo '<div class="alert alert-block"><button type="button" class="close" data-dismiss="alert">&times;</button><ul><li>', implode('<li></li>', $errors), '</li></ul></div>';
@@ -55,17 +57,16 @@
 					</div>
 					<div>
 						<label for="contents"> Contents</label>
-						<textarea name="contents" rows="15" cols="50">
-							<?php if ( isset($_POST['contents']) ) echo $_POST['contents']; ?>
-						</textarea>
+						<textarea name="contents" rows="15" cols="50"><?php if ( isset($_POST['contents']) ) echo $_POST['contents']; ?></textarea>
 					</div>
 					<div>
 						<label>Category</label>
 						<select name="category">
 							<?php 
 								foreach ( get_categories() as $category) {
+									echo("<option value=\"" .  $category["id"] . "\">{$category['name']}</option>");
 								?>
-								<option value="<php echo $category['id']; ?>"> <?php echo $category['name']; ?> </option>
+								<!--<option value="<?php echo $category['id']; ?>"> <?php echo $category['name']; ?> </option>-->
 							<?php 
 								}
 							?>

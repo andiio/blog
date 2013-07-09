@@ -6,14 +6,16 @@ function add_post($title, $contents, $category) {
 	$title 		= mysql_real_escape_string($title);
 	$contents 	= mysql_real_escape_string($contents);
 	$category 	= (int) $category;
+	//var_dump($category);
 
 	mysql_query("INSERT INTO `posts` SET
 
-			'cat_id' 		= '{$category}',
-			'title'			= '{$tile}',
-			'contents'		= '{$contents}',
-			'date_posted'	= NOW()");
+			`cat_id` 		= '{$category}',
+			`title`			= '{$title}',
+			`contents`		= '{$contents}',
+			`date_posted`	= NOW()");
 
+	echo(mysql_error());
 }
 
 function edit_post($id, $title, $contents, $category) {
@@ -22,8 +24,10 @@ function edit_post($id, $title, $contents, $category) {
 
 function add_category($name) {
 	$name = mysql_real_escape_string($name);
+	var_dump($name);
 
 	mysql_query("INSERT INTO categories SET name = '{$name}'");
+	echo(mysql_error());
 }
 
 function delete($table, $id) {
@@ -67,7 +71,7 @@ function category_exists($field, $value) {
 	$field = mysql_real_escape_string($field);
 	$value = mysql_real_escape_string($value);
 
-	$query = mysql_query("SELECT COUNT(1) FROM categories WHERE name = '{$value}'");
+	$query = mysql_query("SELECT COUNT(1) FROM categories WHERE id = '{$value}'");
 
 	echo mysql_error();
 

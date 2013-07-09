@@ -15,6 +15,7 @@ if ( isset($_POST['name']) ) {
 
 	if ( ! isset($error) ) {
 		add_category($name);
+		$success = '<i class="icon-ok">&nbsp;</i>The category has been added';
 	}
 }
 
@@ -27,28 +28,31 @@ if ( isset($_POST['name']) ) {
 	<title>Add Category</title>
 	<?php include "includes/_head.php" ?>
 </head>
-
-
 <body>
 <div class="container">
 	<div class="row">
 		<div class="span6 offset3">
 			<h1>Add Category</h1>
-				<hr>
+				<br>
+			<?php include "includes/_nav.php" ?>
+			<hr>
+			<br>
 			<form action="" method="post">
 					<div>
 						<label class="control-label" for="inputError"> Name </label>
 						<input type="text" name="name" value="">
 						<?php
 							 if ( isset($error) ) {
-							 	echo " <span class='help-inline'>${error}</span>";
+							 	echo " <span class='help-inline'><i class='icon-exclamation'>&nbsp;</i>${error}</span>";
 							 }
 						?>
 						<?php 
 							if ( ! isset($error) ) {
-								echo "<span class='help-inline'></span>";
+								echo "<span class='help-inline'>${success}</span>";
 							}
 						?>
+					<br>
+					<br>	
 					<div>
 						<input type="submit" value="Add Category" class="btn btn-success">
 					</div>

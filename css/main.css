@@ -4,6 +4,16 @@ input {
   display: block;
   width: 100%;
 }
+h1 {
+  text-align: center;
+}
+a {
+  color: #7283e0;
+}
+a:hover {
+  color: #9ca8e9;
+  text-decoration: none;
+}
 .alert-block li {
   list-style: none;
 }

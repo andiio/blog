@@ -1,6 +1,4 @@
-<?php include_once('resources/init.php') 
-
-?>
+<?php include_once('resources/init.php') ?>
 <!DOCTYPE html>
 	<html lang="en">
 
@@ -9,19 +7,16 @@
 	<?php include "includes/_head.php" ?>
 </head>
 
-
 <body>
-		<h1>Hello World Blog</h1>
-		<hr>
+<div class="container">
+	<div class="row">
+		<div class="span6 offset3">
+			<h1>Hello world blog</h1>
+			<br>
+			<?php include "includes/_nav.php" ?>
+			<hr>
+			<br>
 
-<nav>
-	<ul class="btn-group">
-		<li class="btn"><a href="index.php"> Index </a></li>
-		<li class="btn"><a href="index.php"> Add post </a></li>
-		<li class="btn"><a href="index.php"> Add Category </a></li>
-		<li class="btn"><a href="index.php"> Catergory </a></li>
-	</ul>
-</nav>
 
 
 <?php
@@ -36,6 +31,8 @@
 		<?php
 	}
 ?>
-
+</div>
+</div>
+</div>
 </body>
 </html>
