@@ -14,8 +14,6 @@ function add_post($title, $contents, $category) {
 			`title`			= '{$title}',
 			`contents`		= '{$contents}',
 			`date_posted`	= NOW()");
-
-	echo(mysql_error());
 }
 
 function edit_post($id, $title, $contents, $category) {
@@ -24,10 +22,9 @@ function edit_post($id, $title, $contents, $category) {
 
 function add_category($name) {
 	$name = mysql_real_escape_string($name);
-	var_dump($name);
+	//var_dump($name);
 
 	mysql_query("INSERT INTO categories SET name = '{$name}'");
-	echo(mysql_error());
 }
 
 function delete($table, $id) {
@@ -39,12 +36,14 @@ function delete($table, $id) {
 
 function get_posts($id = null, $cat_id = null) {
 	$posts = array();
+$query = ("SELECT posts.id AS post_id, categories.id AS category_id, title, contents, date_posted, categories.name FROM posts INNER JOIN categories ON categories.id = posts.cat_id ORDER BY post_id DESC");
+	/*
 	$query = " SELECT `posts`.`id` AS `post_id`, `categories`, . `id` AS `category_id`,
 				`title`, `contents`, `date_posted`, `categories`. `name`
 				FROM `posts`
 				INNER JOIN `categories` ON `categories` . `id` = `posts`.`cat_id`
-				ORDER BY `posts`. id` DESC";
-
+				ORDER BY `posts` . `id` DESC";
+*/
 	$query = mysql_query($query);
 
 	while ($row = mysql_fetch_assoc($query) ) {

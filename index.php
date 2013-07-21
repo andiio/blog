@@ -1,4 +1,11 @@
-<?php include_once('resources/init.php') ?>
+<?php include_once('resources/init.php') 
+
+
+$posts = get_posts();
+
+
+?>
+
 <!DOCTYPE html>
 	<html lang="en">
 
@@ -20,13 +27,13 @@
 
 
 <?php
-	foreach ($posts as $post) {
-		if (! category_exists('name',$post['name']) ){
-			$post['name'] = 'Uncategrized';
+	foreach ( $posts as $post ) {
+		if ( ! category_exists('name', $post ['name'] ) ){
+			$post['name'] = 'Uncategorised';
 		}
 		?>
 
-		<h2><a href="index.php?id=<?php echo $post['post_id']; ?>"><?php echo $post['title'];?></a></h2>
+		<h2><a href="index.php?id=<?php echo $post['post_id']; ?>"><?php echo $post['title']; ?></a></h2>
 
 		<?php
 	}
