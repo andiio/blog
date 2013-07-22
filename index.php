@@ -1,8 +1,9 @@
-<?php include_once('resources/init.php') 
+<?php 
+
+include_once('resources/init.php');
 
 
 $posts = get_posts();
-
 
 ?>
 
