@@ -3,7 +3,6 @@
 	
 	$post = get_posts($_GET['id']);
 
-
 	if ( isset($_POST['title'], $_POST['contents'], $_POST['category']) ) {
 			//var_dump($_POST);
 		$errors = array();
@@ -25,9 +24,10 @@
 
 		if ( empty($errors) ) {
 			edit_post($_GET['id'], $title, $contents, $_POST['category']);
-			//echo json_encode($post);
-			header('location: index.php?id=' . $id);
 
+			//header('location: index.php?id={$post[0]['posts_id']}');
+			header('location: index.php?id=' . $id);
+			#header('location: index.php?id=' . $id);
 			die();
 		}
 	}
