@@ -25,7 +25,7 @@
 
 			$id = mysql_insert_id();
 
-			header('location: index.php?id={$id}');
+			header('location: index.php?id=' . $id);
 			die();
 		}
 	}

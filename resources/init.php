@@ -1,4 +1,3 @@
-
 <?php
 
 // Get the database details
@@ -13,3 +12,5 @@ mysql_select_db('blog');
 include_once('func/blog.php');
 
 // Ref:  phpacademy - PHP Tutorials: Creating a Blog (Part 3/11) - http://www.youtube.com/watch?v=EtcPEjUIt_8
+
+?>

@@ -29,6 +29,7 @@ $posts = get_posts(((isset($_GET['id'])) ? $_GET['id'] : null));
 
 <?php
 	foreach ( $posts as $post ) {
+		//echo json_encode($post);
 		if ( ! category_exists('name', $post ['name'] ) ){
 			$post['name'] = 'Uncategorised';
 		}

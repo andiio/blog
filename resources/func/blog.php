@@ -1,6 +1,3 @@
-
-<!-- http://www.youtube.com/watch?v=6OfkZIiHOuk -->
-
 <?php
 
 
@@ -78,8 +75,8 @@ function get_categories($id = null){
 function category_exists($field, $value) {
 	$field = mysql_real_escape_string($field);
 	$value = mysql_real_escape_string($value);
-
-	$query = mysql_query("SELECT COUNT(1) FROM categories WHERE id = '{$value}'");
+	$q = "SELECT COUNT(1) FROM categories WHERE {$field} = '{$value}'";
+	$query = mysql_query($q);
 
 	echo mysql_error();
 
