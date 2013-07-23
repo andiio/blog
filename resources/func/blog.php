@@ -16,6 +16,16 @@ function add_post($title, $contents, $category) {
 }
 
 function edit_post($id, $title, $contents, $category) {
+	$id 		= (int) $id;
+	$title 		= mysql_real_escape_string($title);
+	$contents 	= mysql_real_escape_string($contents);
+	$category 	= (int) $category;
+
+	mysql_query("UPDATE `posts` SET
+		`cat_id`	= {$category},
+		`title`		= '{$title}',
+		`contents`	= '{$contents}'
+		WHERE `id` = {$id} ");
 
 }
 

@@ -8,12 +8,29 @@ h1 {
   text-align: center;
 }
 a {
-  color: #7283e0;
+  color: #ff69b4;
 }
 a:hover {
-  color: #9ca8e9;
+  color: #ff9cce;
   text-decoration: none;
 }
 .alert-block li {
   list-style: none;
+}
+.post {
+  margin-bottom: 1.5em;
+  border-bottom: 1px dotted #ff69b4;
+}
+.post-content {
+  padding-top: 1em;
+  font-size: 1.4em;
+  line-height: 1.4em;
+}
+.post-functions ul {
+  float: right;
+}
+.post-functions li {
+  display: block;
+  float: left;
+  padding-right: 1em;
 }

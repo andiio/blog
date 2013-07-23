@@ -16,6 +16,8 @@ if ( isset($_POST['name']) ) {
 	if ( ! isset($error) ) {
 		add_category($name);
 		$success = '<i class="icon-ok">&nbsp;</i>The category has been added';
+
+		header("location: add_post.php");
 	}
 }
 
@@ -35,6 +37,12 @@ if ( isset($_POST['name']) ) {
 			<h1>Add Category</h1>
 				<br>
 			<?php include "includes/_nav.php" ?>
+
+				<?php
+				if ( isset($errors) && ! empty($errors) ) {
+					echo '<div class="alert alert-block"><button type="button" class="close" data-dismiss="alert">&times;</button><ul><li>', implode('<li></li>', $errors), '</li></ul></div>';
+				}
+				?>
 			<hr>
 			<br>
 			<form action="" method="post">

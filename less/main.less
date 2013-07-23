@@ -5,10 +5,32 @@ h1{
 	text-align: center;
 }
 
-@blue: #7283e0;
+@base-color: hotpink;
 
-a{color: @blue;}
-a:hover{color:  lighten(@blue, 10%);; text-decoration: none;}
+a{color: @base-color;}
+a:hover{color:  lighten(@base-color, 10%);; text-decoration: none;}
 .alert-block{
 	li{list-style: none;}
+}
+
+.post{
+	margin-bottom: 1.5em;
+	border-bottom: 1px dotted @base-color;
+}
+
+.post-content{
+	padding-top: 1em;
+	font-size: 1.4em;
+	line-height: 1.4em;
+}
+
+.post-functions{
+	ul{
+		float: right;
+	}
+	li{
+		display: block;
+		float: left;
+		padding-right: 1em;
+	}
 }
