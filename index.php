@@ -27,8 +27,6 @@ $posts = get_posts(((isset($_GET['id'])) ? $_GET['id'] : null));
 			<hr>
 			<br>
 
-
-
 <?php
 	foreach ( $posts as $post ) {
 		if ( ! category_exists('name', $post ['name'] ) ){
@@ -37,7 +35,7 @@ $posts = get_posts(((isset($_GET['id'])) ? $_GET['id'] : null));
 		?>
 
 		<h2><a href="index.php?id=<?php echo $post['post_id']; ?>"><?php echo $post['title']; ?></a></h2>
-		<small> Posted on <?php echo date('d-m-Y h:i:s', strtotime($posts['date_posted'])); ?>
+		<small> Posted on <?php echo date('d-m-Y h:i:s', strtotime($post['date_posted'])); ?>
 			in <a href="category.php?id=<?php echo $post['category_id']; ?>"><?php echo $post['name'];?></a>
 		</small>
 		<div><?php echo nl2br($post['contents']);?></div>
@@ -53,6 +51,7 @@ $posts = get_posts(((isset($_GET['id'])) ? $_GET['id'] : null));
 		<?php
 	}
 ?>
+
 </div>
 </div>
 </div>

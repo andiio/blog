@@ -1,4 +1,3 @@
-
 <?php 
 	include_once('resources/init.php'); 
 	
@@ -26,7 +25,7 @@
 
 			$id = mysql_insert_id();
 
-			header("Location: index.php?id={$id}");
+			header('location: index.php?id={$id}');
 			die();
 		}
 	}
