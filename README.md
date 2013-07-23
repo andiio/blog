@@ -1,5 +1,6 @@
 ###Simple Blog
 
-Current Stand:
-Only one Category can be added, stopping add post 
-// Set foundation and file structure.
+From the blog tutorial on phpacademy.org
+
+https://phpacademy.org/course/blog
+
