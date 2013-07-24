@@ -24,10 +24,9 @@
 
 		if ( empty($errors) ) {
 			edit_post($_GET['id'], $title, $contents, $_POST['category']);
-
-			//header('location: index.php?id={$post[0]['posts_id']}');
-			header('location: index.php?id=' . $id);
-			#header('location: index.php?id=' . $id);
+			#echo json_encode($post);
+			header('location: index.php?id=' . $post[0]['post_id']);
+			
 			die();
 		}
 	}
