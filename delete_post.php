@@ -11,5 +11,5 @@ delete('posts', $_GET['id']);
 
 header('location: index.php');
 die();
-
+ob_flush();
 ?>

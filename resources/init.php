@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 // Get the database details
 
 include_once('config.php');
